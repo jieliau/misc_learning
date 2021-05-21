@@ -1,0 +1,28 @@
+pipeline {
+    agent any
+    environment {
+        API = credentials('APIKey')
+        PASS = credentials('Pass')
+    }
+    stages {
+        stage('Checkout project') {
+            steps {
+                git branch: 'working_branch',
+                credentialsId: 'xxxxxxx-xxxxx-xxxxxxxx-xxx-xxxxx',
+                url: 'https://github.com/jieliau/testing-pipeline.git'
+                
+                sh 'ls -la'
+            }
+        }
+        stage('Stage 1') {
+            steps {
+                sh "execute stage 1 command"
+            }
+        }
+        stage('Stage 2'){
+            steps {
+                sh "export API=${API}; export PASS=${PASS}; execute stage 2 command"
+            }
+        }
+    }
+}
