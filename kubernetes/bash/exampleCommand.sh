@@ -10,4 +10,5 @@ kubectl describe pod/podName -n yourNameSpace
 kubectl edit (pod|deployment|service)/(podName|deploymentName|serviceName) -n yourNameSpace
 
 #https://krew.sigs.k8s.io/docs/user-guide/setup/install/
+#https://krew.sigs.k8s.io/plugins/
 kubectl krew install sniff
