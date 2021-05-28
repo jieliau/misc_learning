@@ -36,3 +36,7 @@ docker rmi -f $(docker images -f "dangling=true" -q)
 
 # Cleaning stop container
 docker rmi $(docker ps -af "status=exited" -q)
+
+# docker-compose example
+docker-compose -f docker-compose.yaml up -d
+docker-compose -f docker-compose.yaml down
